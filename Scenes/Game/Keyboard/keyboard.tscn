@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://dppti365m6xr6"]
+
+[ext_resource type="Script" uid="uid://dxkoc87fcsuyw" path="res://Scenes/Game/Keyboard/keyboard.gd" id="1_xwqm1"]
+
+[node name="keyboard" type="Node2D"]
+script = ExtResource("1_xwqm1")
+
+[node name="display text" type="RichTextLabel" parent="."]
+offset_left = 2.0
+offset_top = 67.0
+offset_right = 377.0
+offset_bottom = 117.0
+text = "hello"
+fit_content = true
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 5.0
+offset_top = 233.0
+offset_right = 381.0
+offset_bottom = 287.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 6.0
+offset_top = 295.0
+offset_right = 372.0
+offset_bottom = 339.0
+text = "Status:"
+
+[connection signal="text_changed" from="TextEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
