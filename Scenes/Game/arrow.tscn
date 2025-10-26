@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsmdc3u115wt0"]
+
+[ext_resource type="Script" uid="uid://cwsmst4begw15" path="res://Scripts/Game/arrow.gd" id="1_s27l1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2qg4l"]
+size = Vector3(0.25, 0.05, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s27l1"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2qg4l"]
+size = Vector3(1.0040283, 0.15759131, 0.23835644)
+
+[node name="Arrow" type="StaticBody3D" groups=["Arrow"]]
+collision_layer = 2
+script = ExtResource("1_s27l1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.0004845, 0, 0, 0, 3.220424, 0, 0, 0, 0.23678432, 0, 0, 0)
+mesh = SubResource("BoxMesh_2qg4l")
+surface_material_override/0 = SubResource("StandardMaterial3D_s27l1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.981326e-05, 0.002260251, -0.00043541938)
+shape = SubResource("BoxShape3D_2qg4l")

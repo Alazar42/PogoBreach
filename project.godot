@@ -11,8 +11,18 @@ config_version=5
 [application]
 
 config/name="PogoBreach"
+run/main_scene="uid://br5e36inu7kdd"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*res://Scripts/Globals.gd"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [input_devices]
 
