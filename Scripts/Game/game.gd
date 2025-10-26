@@ -6,6 +6,7 @@ extends Node3D
 @onready var health_bar: ProgressBar = $HUD/HUD/HealthBar
 @onready var keyboard: Control = $HUD/QuestionContainer/keyboard
 @onready var game_over_container: Control = $HUD/GameOverContainer
+@onready var title_label: Label = $HUD/HUD/TitleLabel
 
 @export var correct_arrow_radius: float = 8.0
 @export var correct_arrow_depth: float = -14.0
@@ -24,6 +25,7 @@ var active_arrows := []
 var game_started: bool = false
 
 func _ready() -> void:
+	title_label.show()
 	game_over_container.hide()
 	score_label.text = str(Globals.health)
 	health_bar.value = Globals.health
@@ -114,6 +116,7 @@ func _physics_process(delta: float) -> void:
 
 # Called when start game button is pressed
 func _on_start_game_btn_pressed() -> void:
+	title_label.hide()
 	game_started = true
 	keyboard.visible = true
 	keyboard.set_process(true)
@@ -136,5 +139,6 @@ func game_over() -> void:
 
 func _on_restart_button_pressed() -> void:
 	get_tree().paused = false
+	title_label.show()
 	keyboard.get_node("MarginContainer/TextEdit").grab_focus()
 	get_tree().reload_current_scene()
