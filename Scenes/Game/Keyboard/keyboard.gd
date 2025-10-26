@@ -1,9 +1,10 @@
-extends Node2D
+extends Control
 
-@onready var displayText = $"display text"
+@onready var displayText = $"MarginContainer/display text"
 @onready var txtEdit = $TextEdit
 @onready var timer = $Timer
 @onready var status = $Label
+@onready var errorLettersRichTxt = $MarginContainer/typedtxt
 
 var fp = FakePayloads.new()
 var active_p
@@ -24,7 +25,6 @@ func _on_text_edit_text_changed() -> void:
 		return
 
 	var mistakes := []
-	
 	for i in range(input_text.length()):
 		var typed_char = input_text[i]
 		var correct_char = full_text[i]

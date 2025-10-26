@@ -7,7 +7,7 @@ class_name FakePayloads
 			"[phase:alpha] spawn_probe() -> {id:0x1A, route: 'delta/echo'};",
 			"// echo buffer: fill with pseudo-random noise; DO NOT EXECUTE (display-only)"
 		],
-		"timer": 12,
+		"timer": 32,
 		"context": "Cinematic multi-line initialization sequence"
 	},
 	{
@@ -17,7 +17,7 @@ class_name FakePayloads
 			"-- projector: render 'ACCESS SIMULATED' banner (visual-only)",
 			"// This is a decorative string used for flavor text."
 		],
-		"timer": 14,
+		"timer": 30,
 		"context": "Long fake auth dialog for a cutscene"
 	},
 	{
@@ -27,7 +27,7 @@ class_name FakePayloads
 			"}",
 			"/* display-only scramble dump — intended as UI noise and narrative text. */"
 		],
-		"timer": 10,
+		"timer": 30,
 		"context": "Scrolling debug-like packet dump effect"
 	},
 	{
@@ -36,7 +36,7 @@ class_name FakePayloads
 			"timestamp: 2025-XX-XXT00:00:00Z; metrics { jitter: ∼0.004, spike_count: 7 }",
 			"// Rendered for story context only; no live telemetry attached."
 		],
-		"timer": 9,
+		"timer": 30,
 		"context": "Longer text for status/report display"
 	},
 	{
@@ -47,7 +47,7 @@ class_name FakePayloads
 			"}",
 			"// Dramatic effect text — not a real cryptographic routine."
 		],
-		"timer": 16,
+		"timer": 30,
 		"context": "Slow, dramatic encryption-style text for tension"
 	},
 	{
@@ -58,7 +58,7 @@ class_name FakePayloads
 			"> traces: (simulated) delta->omega->null",
 			"// Use for puzzle hinting or lore messages."
 		],
-		"timer": 11,
+		"timer": 30,
 		"context": "Lore / puzzle hint block with multiple lines"
 	},
 	{
@@ -68,7 +68,7 @@ class_name FakePayloads
 			"emit('payload_preview', format='ascii_art');",
 			"// purely aesthetic; safe to display to players."
 		],
-		"timer": 8,
+		"timer": 30,
 		"context": "Mid-length pipeline description for UI"
 	},
 	{
@@ -80,7 +80,7 @@ class_name FakePayloads
 			"}",
 			"// Multi-line flavor payload for interactive terminals."
 		],
-		"timer": 13,
+		"timer": 30,
 		"context": "Terminal-style verbose handshake text"
 	},
 	{
@@ -92,7 +92,7 @@ class_name FakePayloads
 			"}",
 			"// Use when you want the player to read multiple short lines of faux debug."
 		],
-		"timer": 7,
+		"timer": 30,
 		"context": "Short multi-line debug dump for quick reading"
 	},
 	{
@@ -103,7 +103,7 @@ class_name FakePayloads
 			"-- emit 'SESSION CLOSED (simulated)'",
 			"// End sequence text; decorative and harmless."
 		],
-		"timer": 6,
+		"timer": 30,
 		"context": "End-of-minigame or cutscene closing text"
 	}
 ]
