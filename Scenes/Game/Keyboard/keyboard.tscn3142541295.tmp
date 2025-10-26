@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://dppti365m6xr6"]
+
+[ext_resource type="Theme" uid="uid://2mc4df51oexl" path="res://Scenes/Game/Keyboard/keyboard_theme.tres" id="1_7qq4e"]
+[ext_resource type="Script" uid="uid://dxkoc87fcsuyw" path="res://Scenes/Game/Keyboard/keyboard.gd" id="1_xwqm1"]
+
+[sub_resource type="Gradient" id="Gradient_7qq4e"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0.29803923)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xthmp"]
+gradient = SubResource("Gradient_7qq4e")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+
+[node name="keyboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_7qq4e")
+script = ExtResource("1_xwqm1")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Status:"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_xthmp")
+
+[node name="typedtxt" type="RichTextLabel" parent="MarginContainer"]
+z_index = 1
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 0.39607844)
+theme_override_colors/font_outline_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+theme_override_constants/outline_size = 2
+text = "HELLO"
+fit_content = true
+
+[node name="display text" type="RichTextLabel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 0.39607844)
+theme_override_colors/font_outline_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+theme_override_constants/outline_size = 2
+text = "hello"
+fit_content = true
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer"]
+visible = false
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/line_spacing = 1
+text = "Hello"
+selecting_enabled = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="text_changed" from="MarginContainer/TextEdit" to="." method="_on_text_edit_text_changed"]

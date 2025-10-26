@@ -993,7 +993,7 @@ variation_transform = Transform2D(1, 0.2, 0, 1, 0, 0)
 base_font = SubResource("FontFile_gvlum")
 variation_transform = Transform2D(1, 0.2, 0, 1, 0, 0)
 
-[sub_resource type="Image" id="Image_fnd1r"]
+[sub_resource type="Image" id="Image_gvlum"]
 data = {
 "data": PackedByteArray("/////////////////////w=="),
 "format": "RGBA8",
@@ -1003,7 +1003,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_gt1l3"]
-image = SubResource("Image_fnd1r")
+image = SubResource("Image_gvlum")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8kal"]
 bg_color = Color(1, 1, 1, 0)
